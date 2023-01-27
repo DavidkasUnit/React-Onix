@@ -4,19 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicTaker</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://kit.fontawesome.com/b98ebc70c8.js" crossorigin="anonymous"></script>
+    <title>TimeTaker</title>
 </head>
 <body>
-    <nav>
-        <img src="img/background.jpg" alt="1">
-    </nav>
-    <div class="content">
-        <div class="content-main">
-            
+    <div id="top">
+    </div>
+        <nav class="global " id="navbar">
+            <div class="nav-title">
+                <a href="#"><i class="fa-2x fa-regular fa-circle-dot nav-title-icon"></i></a>
+                <a href="#"><span class="nav-title-span">TimeTaker</span></a> 
+            </div>
+            <div class="nav-buttons">
+                <a href="#"><span class="nav-buttons-span hover-purple"> Запитання та відповіді</span></a>
+                <a href="#"><span class="nav-buttons-span hover-purple"><i class="fa-solid fa-user nav-buttons-span-icon"></i> Ввійти</span></a>
+                <a href="#"><i class="fa-2x fa-solid fa-bag-shopping nav-buttons-icon"></i></a>
+                <span class="purple-button nav-buttons-span">Придбати</span>
+            </div>
+        </nav>
+    
+    <div class="content" >
+        <div class="content-main" id="content">
+            <span class="content-main-span big-font">TimeTaker</span>
+            <span class="content-main-span medium-font padding-margin-left">Онлайн магазин <br>   для продажу смарт годинників</span>
+            <span class="purple-button">INFO</span>
+            <img src="img/content-main.jpg" alt="1" class="content-main-image">
         </div>
+        <div class="content-workspace">
+            <div class="content-workspace-space">
+                <span class="content-workspace-space-span">WorkSpace</span>
+            </div>
+        </div>
+        
+            
     </div>
     <footer>
-
+        <div class="footer-up-section">
+            <span class="footer-up-section-span">Instagram</span>
+            <span class="footer-up-section-span">Twitter</span>
+            <span class="footer-up-section-span">Facebook</span>
+            <span class="footer-up-section-span">Гарантії</span>
+            <span class="footer-up-section-span">Про нас</span>
+        </div>
+        <div class="bottom-section">
+            <a href="https://www.wix.com/templatesru/2964-product-landing" class="bottom-section-a">Посилання на оригінальний дизайн</a>
+            <span class="bottom-section-span">Автор - Лапін Давід</span>
+        </div>
     </footer>
+    <script>
+        const header = document.querySelector('#top');
+        const nav = document.querySelector('#navbar');
+        const callback = ([entry]) => {
+            const { isIntersecting } = entry;
+            nav.classList.toggle('nav-scrolled', !isIntersecting);
+            nav.classList.toggle('nav-scrolled', !isIntersecting);
+        };
+        const options = {
+            root: null,
+            rootMargintop: '0px',
+            threshold: 0.0
+        };
+        const observer = new IntersectionObserver(callback, options);
+        observer.observe(header);
+    </script>
 </body>
 </html>
